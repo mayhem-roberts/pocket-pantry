@@ -7,20 +7,6 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/mainPantryButton"
-        android:layout_width="224dp"
-        android:layout_height="90dp"
-        android:backgroundTint="#FA00966C"
-        android:fontFamily="sans-serif-black"
-        android:text="Pantry"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="198dp" />
-
-    <Button
         android:id="@+id/mainRecipeButton"
         android:layout_width="224dp"
         android:layout_height="90dp"
@@ -29,9 +15,25 @@
         android:text="Recipe"
         android:textColor="@color/white"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="346dp" />
+        app:layout_constraintTop_toBottomOf="@+id/mainPantryButton" />
+
+    <Button
+        android:id="@+id/mainPantryButton"
+        android:layout_width="224dp"
+        android:layout_height="90dp"
+        android:backgroundTint="#FA00966C"
+        android:fontFamily="sans-serif-black"
+        android:text="Pantry"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/mainRecipeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

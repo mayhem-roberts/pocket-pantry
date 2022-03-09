@@ -11,6 +11,25 @@
         android:layout_width="76dp"
         android:layout_height="69dp"
         android:text="+"
-        tools:layout_editor_absoluteX="290dp"
-        tools:layout_editor_absoluteY="624dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pantryList"
+        tools:layout_editor_absoluteX="290dp" />
+
+    <TextView
+        android:id="@+id/pantryList"
+        android:layout_width="295dp"
+        android:layout_height="496dp"
+        android:text="Pantry list"
+        app:layout_constraintBottom_toTopOf="@+id/pantryAddButtton"
+        app:layout_constraintTop_toBottomOf="@+id/pantryBackButton"
+        tools:layout_editor_absoluteX="67dp" />
+
+    <ImageButton
+        android:id="@+id/pantryBackButton"
+        android:layout_width="54dp"
+        android:layout_height="53dp"
+        app:layout_constraintBottom_toTopOf="@+id/pantryList"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        tools:layout_editor_absoluteX="29dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
