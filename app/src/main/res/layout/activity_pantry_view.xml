@@ -8,28 +8,33 @@
 
     <Button
         android:id="@+id/pantryAddButtton"
-        android:layout_width="76dp"
-        android:layout_height="69dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:backgroundTint="#4CAF50"
         android:text="+"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pantryList"
         tools:layout_editor_absoluteX="290dp" />
 
     <TextView
         android:id="@+id/pantryList"
-        android:layout_width="295dp"
-        android:layout_height="496dp"
+        android:layout_width="308dp"
+        android:layout_height="319dp"
         android:text="Pantry list"
         app:layout_constraintBottom_toTopOf="@+id/pantryAddButtton"
-        app:layout_constraintTop_toBottomOf="@+id/pantryBackButton"
-        tools:layout_editor_absoluteX="67dp" />
+        app:layout_constraintTop_toBottomOf="@+id/backButton"
+        tools:layout_editor_absoluteX="51dp" />
 
     <ImageButton
-        android:id="@+id/pantryBackButton"
-        android:layout_width="54dp"
-        android:layout_height="53dp"
+        android:id="@+id/backButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:backgroundTint="#4CAF50"
+        android:tint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/pantryList"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/actionModeCloseDrawable"
-        tools:layout_editor_absoluteX="29dp" />
+        app:srcCompat="?attr/homeAsUpIndicator"
+        tools:layout_editor_absoluteX="51dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
