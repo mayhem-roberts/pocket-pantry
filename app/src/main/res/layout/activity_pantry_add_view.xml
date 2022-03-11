@@ -22,18 +22,35 @@
         android:id="@+id/pantryItems"
         android:layout_width="409dp"
         android:layout_height="67dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="149dp"
+        android:layout_marginEnd="1dp"
         android:layout_marginBottom="372dp"
+        android:background="#23B7BDB7"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButton2" />
 
     <Button
         android:id="@+id/addItemButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:layout_marginStart="299dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="56dp"
         android:backgroundTint="#4CAF50"
         android:text="+"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="299dp"
-        tools:layout_editor_absoluteY="563dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="462dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
