@@ -10,13 +10,16 @@
         android:id="@+id/backButton2"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:layout_marginStart="51dp"
         android:layout_marginTop="68dp"
+        android:layout_marginEnd="285dp"
         android:backgroundTint="#4CAF50"
         android:tint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/pantryList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/homeAsUpIndicator"
-        tools:layout_editor_absoluteX="45dp" />
+        app:srcCompat="?attr/homeAsUpIndicator" />
 
     <Spinner
         android:id="@+id/pantryItems"
@@ -25,10 +28,11 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="149dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="372dp"
+        android:layout_marginBottom="233dp"
         android:background="#23B7BDB7"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/addItemButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backButton2" />
 
@@ -36,9 +40,9 @@
         android:id="@+id/addItemButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginStart="299dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginStart="285dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="64dp"
         android:backgroundTint="#4CAF50"
         android:text="+"
         android:textSize="34sp"
