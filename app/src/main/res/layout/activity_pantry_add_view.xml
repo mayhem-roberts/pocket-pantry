@@ -34,7 +34,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/backButton2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/addItemButton"
@@ -51,10 +52,39 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="462dp" />
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="124dp"
+        android:layout_height="78dp"
+        android:backgroundTint="#2F000000"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="444dp" />
+
+    <TextView
+        android:id="@+id/weight"
+        android:layout_width="124dp"
+        android:layout_height="78dp"
+        tools:layout_editor_absoluteX="236dp"
+        tools:layout_editor_absoluteY="444dp" />
+
+    <EditText
+        android:id="@+id/quantityText"
+        android:layout_width="118dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Quantity"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="391dp" />
+
+    <EditText
+        android:id="@+id/WeightText"
+        android:layout_width="118dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Weight"
+        tools:layout_editor_absoluteX="236dp"
+        tools:layout_editor_absoluteY="391dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
