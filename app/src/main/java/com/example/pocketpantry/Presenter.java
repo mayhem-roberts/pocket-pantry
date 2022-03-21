@@ -1,5 +1,7 @@
 package com.example.pocketpantry;
 
+import android.content.Context;
+
 public class Presenter implements Contract.Presenter{
 
     //the 'model' object will be used to call all
@@ -32,8 +34,9 @@ public class Presenter implements Contract.Presenter{
     }
 
     @Override
-    public void onClickCreatePantryItem() {
-
+    public void onClickCreatePantryItem(Context context, String name, int quantity, float weight) {
+        DatabaseHelper databaseHelper(context);
+        databaseHelper.addOne(name, quantity, weight);
     }
 
     @Override
@@ -52,7 +55,8 @@ public class Presenter implements Contract.Presenter{
     }
 
     @Override
-    public void showAllPantryItems() {
-
+    public void showAllPantryItems(Context context) {
+        DatabaseHelper databaseHelper(context);
+        databaseHelper.getAll();
     }
 }

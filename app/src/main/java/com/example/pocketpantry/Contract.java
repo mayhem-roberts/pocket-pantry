@@ -19,6 +19,8 @@ This interface contains all the methods to be implemented by the
 
 package com.example.pocketpantry;
 
+import java.util.List;
+
 public interface Contract {
     interface View{}
 
@@ -41,6 +43,12 @@ public interface Contract {
         //get all pantry items
         void getAllPantryItems();
     }
+
+    interface DatabaseModel{
+        public List<PantryItem> getAll();
+        public boolean addOne(String name, int quantity, float weight);
+    }
+
     interface Presenter{
         //Event handlers for recipes view
         void onClickCreateRecipe();

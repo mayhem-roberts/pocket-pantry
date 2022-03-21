@@ -1,6 +1,7 @@
 package com.example.pocketpantry;
 
 public class Model implements Contract.Model{
+
     @Override
     public void createRecipe() {
 
