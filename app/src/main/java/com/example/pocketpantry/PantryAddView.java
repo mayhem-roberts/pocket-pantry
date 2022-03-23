@@ -15,7 +15,7 @@ import android.widget.TextView;
 public class PantryAddView extends AppCompatActivity{
     private Button addButton;
     private ImageButton backButton;
-    private TextView quantity, weight;
+    private TextView quantityValue, weightValue;
     private Presenter presenter;
     private Spinner spinner;
 
@@ -25,8 +25,14 @@ public class PantryAddView extends AppCompatActivity{
         setContentView(R.layout.activity_pantry_add_view);
         addButton = findViewById(R.id.pantryAddButtton);
         backButton = findViewById(R.id.backButton2);
-        quantity = findViewById(R.id.quantity);
-        weight = findViewById(R.id.weight);
+        quantityValue = findViewById(R.id.quantity);
+        weightValue = findViewById(R.id.weight);
+
+        quantityValue.getText().toString();
+        int quantity = Integer.parseInt(String.valueOf(quantityValue));
+
+        weightValue.getText().toString();
+        float weight = Float.parseFloat(String.valueOf(weightValue));
 
         spinner = findViewById(R.id.pantryItems);
         String pantryItem = spinner.getSelectedItem().toString();
