@@ -5,17 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class PantryAddView extends AppCompatActivity {
+public class PantryAddView extends AppCompatActivity{
     private Button addButton;
     private ImageButton backButton;
     private TextView quantity, weight;
     private Presenter presenter;
-    private Spinner pantryItem;
+    private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +25,15 @@ public class PantryAddView extends AppCompatActivity {
         setContentView(R.layout.activity_pantry_add_view);
         addButton = findViewById(R.id.pantryAddButtton);
         backButton = findViewById(R.id.backButton2);
-        quantity = findViewById(R.id.quantity).getText();
+        quantity = findViewById(R.id.quantity);
         weight = findViewById(R.id.weight);
-        pantryItem = findViewById(R.id.pantryItems);
+
+        spinner = findViewById(R.id.pantryItems);
+        String pantryItem = spinner.getSelectedItem().toString();
+
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.foodItems, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

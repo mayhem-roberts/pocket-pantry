@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name"></string>
+
+    <string-array name="foodItems">
+        <item>Milk</item>
+        <item>Eggs</item>
+        <item>Sugar</item>
+        <item>Flour</item>
+    </string-array>
 </resources>
