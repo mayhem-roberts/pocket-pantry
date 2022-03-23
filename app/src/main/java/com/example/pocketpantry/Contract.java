@@ -19,6 +19,8 @@ This interface contains all the methods to be implemented by the
 
 package com.example.pocketpantry;
 
+import android.content.Context;
+
 import java.util.List;
 
 public interface Contract {
@@ -64,10 +66,10 @@ public interface Contract {
         void showAllRecipes();
 
         //Event handlers for pantry view
-        void onClickCreatePantryItem();
+        void onClickCreatePantryItem(Context context, String name, int quantity, float weight);
         void onClickReadPantryItem();
-        void onClickUpdatePantryItem();
-        void onClickDeletePantryItem();
-        void showAllPantryItems();
+        void onClickUpdatePantryItem(Context context, PantryItem pantryItem);
+        void onClickDeletePantryItem(Context context, int _id);
+        void showAllPantryItems(Context context);
     }
 }

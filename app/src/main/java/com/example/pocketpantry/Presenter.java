@@ -32,7 +32,7 @@ public class Presenter implements Contract.Presenter{
     public void showAllRecipes() {
 
     }
-
+    @Override
     public void onClickCreatePantryItem(Context context, String name, int quantity, float weight) {
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
         databaseHelper.addOne(name, quantity, weight);
@@ -42,17 +42,17 @@ public class Presenter implements Contract.Presenter{
     public void onClickReadPantryItem() {
 
     }
-
+    @Override
     public void onClickUpdatePantryItem(Context context, PantryItem pantryItem) {
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
         databaseHelper.updateItem(pantryItem);
     }
-
+    @Override
     public void onClickDeletePantryItem(Context context, int _id) {
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
         databaseHelper.deleteItem(_id);
     }
-
+    @Override
     public void showAllPantryItems(Context context) {
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
         databaseHelper.getAll();
