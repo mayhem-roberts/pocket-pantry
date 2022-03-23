@@ -45,13 +45,15 @@ public class Presenter implements Contract.Presenter{
     }
 
     @Override
-    public void onClickUpdatePantryItem() {
-
+    public void onClickUpdatePantryItem(Context context, PantryItem pantryItem) {
+        DatabaseHelper databaseHelper(context);
+        databaseHelper.updateItem(pantryItem);
     }
 
     @Override
-    public void onClickDeletePantryItem() {
-
+    public void onClickDeletePantryItem(Context context, int _id) {
+        DatabaseHelper databaseHelper(context);
+        databaseHelper.deleteItem(_id);
     }
 
     @Override
