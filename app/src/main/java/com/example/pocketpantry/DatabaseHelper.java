@@ -77,4 +77,24 @@ public class DatabaseHelper extends SQLiteOpenHelper implements Contract.Databas
         db.close();
         return returnList;
     }
+
+    @Override
+    public void updateItem(PantryItem pantryItem) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_PANTRY_ITEM_NAME, pantryItem.getName());
+        cv.put(COLUMN_PANTRY_ITEM_QUANTITY, pantryItem.getQuantity());
+        cv.put(COLUMN_PANTRY_ITEM_WEIGHT, pantryItem.getWeight());
+
+        long update = db.update(TABLE_NAME, cv, "COLUMN_ID=?", new String[] {String.valueOf(pantryItem.get_id())});
+    }
+
+    @Override
+    public void deleteItem(int _id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME, "COLUMN_ID=?", new String[] {String.valueOf(_id)});
+    }
+
+
 }

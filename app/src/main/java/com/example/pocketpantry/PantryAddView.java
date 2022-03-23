@@ -23,7 +23,7 @@ public class PantryAddView extends AppCompatActivity {
         setContentView(R.layout.activity_pantry_add_view);
         addButton = findViewById(R.id.pantryAddButtton);
         backButton = findViewById(R.id.backButton2);
-        quantity = findViewById(R.id.quantity).getText();
+        quantity = findViewById(R.id.quantity);
         weight = findViewById(R.id.weight);
         pantryItem = findViewById(R.id.pantryItems);
 

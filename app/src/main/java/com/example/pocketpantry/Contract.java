@@ -45,8 +45,14 @@ public interface Contract {
     }
 
     interface DatabaseModel{
-        public List<PantryItem> getAll();
-        public boolean addOne(String name, int quantity, float weight);
+        //create
+        boolean addOne(String name, int quantity, float weight);
+        //read
+        List<PantryItem> getAll();
+        //update
+        void updateItem(PantryItem pantryItem);
+        //delete
+        void deleteItem(int _id);
     }
 
     interface Presenter{
