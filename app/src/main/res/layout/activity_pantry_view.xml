@@ -6,42 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".PantryView">
 
-    <Button
-        android:id="@+id/pantryAddButtton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="285dp"
-        android:layout_marginEnd="51dp"
-        android:backgroundTint="#4CAF50"
-        android:text="+"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="2dp">
 
-    <ImageButton
-        android:id="@+id/backButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginEnd="285dp"
-        android:backgroundTint="#4CAF50"
-        android:tint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/homeAsUpIndicator" />
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:backgroundTint="#4CAF50"
+            app:srcCompat="?attr/homeAsUpIndicator"
+            tools:ignore="SpeakableTextPresentCheck"
+            app:tint="#FFFFFF" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="408dp"
-        android:layout_height="386dp"
-        app:layout_constraintBottom_toTopOf="@+id/pantryAddButtton"
-        app:layout_constraintTop_toBottomOf="@+id/backButton"
-        tools:layout_editor_absoluteX="2dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="408dp"
+            android:layout_height="386dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/pantryAddButtton"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:backgroundTint="#4CAF50"
+            android:text="+"
+            android:textSize="34sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
