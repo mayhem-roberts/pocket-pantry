@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/reaga/AndroidStudioProjects/pocket-pantry/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.329" />
+        <entry key="..\:/Users/reaga/AndroidStudioProjects/pocket-pantry/app/src/main/res/drawable/border.xml" value="0.329" />
+        <entry key="..\:/Users/reaga/AndroidStudioProjects/pocket-pantry/app/src/main/res/drawable/ic_launcher_background.xml" value="0.329" />
         <entry key="..\:/Users/reaga/AndroidStudioProjects/pocket-pantry/app/src/main/res/layout/activity_main.xml" value="0.23822463768115942" />
-        <entry key="..\:/Users/reaga/AndroidStudioProjects/pocket-pantry/app/src/main/res/layout/activity_pantry_add_view.xml" value="0.20364583333333333" />
+        <entry key="..\:/Users/reaga/AndroidStudioProjects/pocket-pantry/app/src/main/res/layout/activity_pantry_add_view.xml" value="0.22" />
         <entry key="..\:/Users/reaga/AndroidStudioProjects/pocket-pantry/app/src/main/res/layout/activity_pantry_view.xml" value="0.24864130434782608" />
         <entry key="..\:/Users/reaga/AndroidStudioProjects/pocket-pantry/app/src/main/res/layout/activity_recipe_view.xml" value="0.24864130434782608" />
         <entry key="..\:/Users/reaga/AndroidStudioProjects/pocket-pantry/app/src/main/res/layout/home_pantry.xml" value="0.24864130434782608" />
