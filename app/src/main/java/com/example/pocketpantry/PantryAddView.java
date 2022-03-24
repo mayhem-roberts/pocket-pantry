@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -15,7 +16,7 @@ import android.widget.TextView;
 public class PantryAddView extends AppCompatActivity{
     private Button addButton;
     private ImageButton backButton;
-    private TextView quantityValue, weightValue;
+    private EditText quantityValue, weightValue;
     private Presenter presenter;
     private Spinner spinner;
 
