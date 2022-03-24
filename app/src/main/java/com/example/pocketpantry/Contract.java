@@ -70,6 +70,6 @@ public interface Contract {
         void onClickReadPantryItem();
         void onClickUpdatePantryItem(Context context, PantryItem pantryItem);
         void onClickDeletePantryItem(Context context, int _id);
-        void showAllPantryItems(Context context);
+        List<PantryItem> showAllPantryItems(Context context);
     }
 }

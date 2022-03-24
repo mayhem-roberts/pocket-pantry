@@ -2,6 +2,8 @@ package com.example.pocketpantry;
 
 import android.content.Context;
 
+import java.util.List;
+
 public class Presenter implements Contract.Presenter{
 
     //the 'model' object will be used to call all
@@ -53,8 +55,8 @@ public class Presenter implements Contract.Presenter{
         databaseHelper.deleteItem(_id);
     }
     @Override
-    public void showAllPantryItems(Context context) {
+    public List<PantryItem> showAllPantryItems(Context context) {
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
-        databaseHelper.getAll();
+        return databaseHelper.getAll();
     }
 }
