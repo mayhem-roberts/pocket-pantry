@@ -18,30 +18,25 @@ public class PantryAddView extends AppCompatActivity{
     private ImageButton backButton;
     private EditText quantityValue, weightValue;
     private Presenter presenter;
-    private Spinner spinner;
+    private Spinner itemSpinner;
+    String[] items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry_add_view);
+
         addButton = findViewById(R.id.pantryAddButtton);
         backButton = findViewById(R.id.backButton2);
-
         quantityValue = findViewById(R.id.quantity);
         weightValue = findViewById(R.id.weight);
 
-        quantityValue.getText().toString();
-        int quantity = Integer.parseInt(String.valueOf(quantityValue));
-
-        weightValue.getText().toString();
-        float weight = Float.parseFloat(String.valueOf(weightValue));
-
-        spinner = findViewById(R.id.pantryItems);
-        String pantryItem = spinner.getSelectedItem().toString();
-
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.foodItems, android.R.layout.simple_spinner_item);
+        // populate spinner with food items
+        itemSpinner = (Spinner) findViewById(R.id.pantryItems);
+        items = getResources().getStringArray(R.array.foodItems);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        itemSpinner.setAdapter(adapter);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +49,15 @@ public class PantryAddView extends AppCompatActivity{
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                quantityValue.getText().toString();
+                int quantity = Integer.parseInt(String.valueOf(quantityValue));
+
+                weightValue.getText().toString();
+                float weight = Float.parseFloat(String.valueOf(weightValue));
+
+                //itemSpinner = findViewById(R.id.pantryItems);
+                String pantryItem = itemSpinner.getSelectedItem().toString();
+
                 presenter.onClickCreatePantryItem(PantryAddView.this, pantryItem, quantity, weight);
             }
         });

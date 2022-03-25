@@ -21,6 +21,8 @@ public class PantryView extends AppCompatActivity {
         addButton = findViewById(R.id.pantryAddButtton);
         backButton = findViewById(R.id.backButton);
 
+
+
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
