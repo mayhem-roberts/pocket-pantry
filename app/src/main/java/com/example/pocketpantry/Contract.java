@@ -66,7 +66,7 @@ public interface Contract {
         void showAllRecipes();
 
         //Event handlers for pantry view
-        void onClickCreatePantryItem(Context context, String name, int quantity, float weight);
+        boolean onClickCreatePantryItem(Context context, String name, int quantity, float weight);
         void onClickReadPantryItem();
         void onClickUpdatePantryItem(Context context, PantryItem pantryItem);
         void onClickDeletePantryItem(Context context, int _id);

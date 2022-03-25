@@ -1,11 +1,13 @@
 package com.example.pocketpantry;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.List;
 
 public class Presenter implements Contract.Presenter{
 
+    private static final String TAG = "Presenter Class";
     //the 'model' object will be used to call all
     // methods from the 'Model' contract
     private Contract.Model model;
@@ -35,9 +37,10 @@ public class Presenter implements Contract.Presenter{
 
     }
     @Override
-    public void onClickCreatePantryItem(Context context, String name, int quantity, float weight) {
+    public boolean onClickCreatePantryItem(Context context, String name, int quantity, float weight) {
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
-        databaseHelper.addOne(name, quantity, weight);
+        boolean success = databaseHelper.addOne(name, quantity, weight);
+        return success;
     }
 
     @Override
