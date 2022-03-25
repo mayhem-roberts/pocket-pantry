@@ -26,7 +26,7 @@ public class PantryAddView extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry_add_view);
 
-        addButton = findViewById(R.id.pantryAddButtton);
+        addButton = findViewById(R.id.addItemButton);
         backButton = findViewById(R.id.backButton2);
         quantityValue = findViewById(R.id.quantity);
         weightValue = findViewById(R.id.weight);
@@ -49,16 +49,19 @@ public class PantryAddView extends AppCompatActivity{
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                quantityValue.getText().toString();
-                int quantity = Integer.parseInt(String.valueOf(quantityValue));
+                //quantityValue.getText().toString();
+                //int quantity = Integer.parseInt(String.valueOf(quantityValue));
+                //System.out.println(quantity);
 
-                weightValue.getText().toString();
-                float weight = Float.parseFloat(String.valueOf(weightValue));
+                //weightValue.getText().toString();
+                //float weight = Float.parseFloat(String.valueOf(weightValue));
+                //System.out.println(weight);
 
                 //itemSpinner = findViewById(R.id.pantryItems);
-                String pantryItem = itemSpinner.getSelectedItem().toString();
+                //String pantryItem = itemSpinner.getSelectedItem().toString();
+                //System.out.println(pantryItem);
 
-                presenter.onClickCreatePantryItem(PantryAddView.this, pantryItem, quantity, weight);
+                //presenter.onClickCreatePantryItem(PantryAddView.this, pantryItem, quantity, weight);
             }
         });
     }
