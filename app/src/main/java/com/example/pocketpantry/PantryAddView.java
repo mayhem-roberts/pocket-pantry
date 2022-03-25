@@ -52,6 +52,7 @@ public class PantryAddView extends AppCompatActivity{
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String quantityString = quantityValue.getText().toString();
                 int quantity = Integer.parseInt(String.valueOf(quantityString));
                 //Log.d(TAG, "quantity: " + quantity);
@@ -60,8 +61,9 @@ public class PantryAddView extends AppCompatActivity{
                 float weight = Float.parseFloat(String.valueOf(weightString));
                 //Log.d(TAG, "weight: " + weight);
 
-                //itemSpinner = findViewById(R.id.pantryItems);
+                itemSpinner = findViewById(R.id.pantryItems);
                 String pantryItem = itemSpinner.getSelectedItem().toString();
+                System.out.println(pantryItem);
 
                 Log.d(TAG, "PantryAddView.this: " + PantryAddView.this + ", pantryItem: " + pantryItem + ", quantity: " + quantity + ", weight: " + weight);
 
