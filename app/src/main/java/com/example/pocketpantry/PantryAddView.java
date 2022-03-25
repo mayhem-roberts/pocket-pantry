@@ -49,19 +49,19 @@ public class PantryAddView extends AppCompatActivity{
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //quantityValue.getText().toString();
-                //int quantity = Integer.parseInt(String.valueOf(quantityValue));
-                //System.out.println(quantity);
+                quantityValue.getText().toString();
+                int quantity = Integer.parseInt(String.valueOf(quantityValue));
+                System.out.println(quantity);
 
-                //weightValue.getText().toString();
-                //float weight = Float.parseFloat(String.valueOf(weightValue));
-                //System.out.println(weight);
+                weightValue.getText().toString();
+                float weight = Float.parseFloat(String.valueOf(weightValue));
+                System.out.println(weight);
 
-                //itemSpinner = findViewById(R.id.pantryItems);
-                //String pantryItem = itemSpinner.getSelectedItem().toString();
-                //System.out.println(pantryItem);
+                itemSpinner = findViewById(R.id.pantryItems);
+                String pantryItem = itemSpinner.getSelectedItem().toString();
+                System.out.println(pantryItem);
 
-                //presenter.onClickCreatePantryItem(PantryAddView.this, pantryItem, quantity, weight);
+                presenter.onClickCreatePantryItem(PantryAddView.this, pantryItem, quantity, weight);
             }
         });
     }
