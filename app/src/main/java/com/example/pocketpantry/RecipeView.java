@@ -1,6 +1,6 @@
 package com.example.pocketpantry;
 
-import android.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
