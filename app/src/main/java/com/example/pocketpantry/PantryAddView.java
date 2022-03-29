@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class PantryAddView extends AppCompatActivity{
-    private static final String TAG = "PantryAddView";
 
     private Button addButton;
     private ImageButton backButton;
