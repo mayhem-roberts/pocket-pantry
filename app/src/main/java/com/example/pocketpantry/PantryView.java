@@ -12,13 +12,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PantryView extends AppCompatActivity {
     private Button addButton;
     private ImageButton backButton;
-
-    // pantry recyclerview
-    ArrayList<pantryItemModel> pantryItemModels = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +28,9 @@ public class PantryView extends AppCompatActivity {
 
         // pantry recyclerview
         RecyclerView recyclerView = findViewById(R.id.pantryRecyclerView);
-        setUpPantryItemModels();//set up models
+        Presenter presenter = new Presenter();
         // set up adapter AFTER setUpPantryItemModels
-        PantryRecyclerViewAdapter adapter = new PantryRecyclerViewAdapter(this, pantryItemModels);
+        PantryRecyclerViewAdapter adapter = new PantryRecyclerViewAdapter(this, presenter.showAllPantryItems(PantryView.this));
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -52,16 +50,5 @@ public class PantryView extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    // pantry recyclerview
-    private  void setUpPantryItemModels() {
-        String[] itemNames = ;
-        String[] itemQuantities = ;
-        String[] itemweights = ;
-
-        for (int i = 0; i<itemNames.length; i++) {
-            pantryItemModels.add(new pantryItemModel(itemNames[i], itemQuantities[i], itemweights[i]));
-        }
     }
 }

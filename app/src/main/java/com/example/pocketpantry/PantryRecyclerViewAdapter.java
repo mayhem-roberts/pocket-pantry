@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class PantryRecyclerViewAdapter extends RecyclerView.Adapter<PantryRecyclerViewAdapter.MyViewHolder> {
     Context context;
-    ArrayList<pantryItemModel> pantryItemModels;
+    ArrayList<PantryItem> pantryItems;
 
-    public PantryRecyclerViewAdapter(Context context, ArrayList<pantryItemModel> pantryItemModels) {
+    public PantryRecyclerViewAdapter(Context context, ArrayList<PantryItem> pantryItems) {
         this.context = context;
-        this.pantryItemModels = pantryItemModels;
+        this.pantryItems = pantryItems;
     }
 
     @NonNull
@@ -31,14 +31,14 @@ public class PantryRecyclerViewAdapter extends RecyclerView.Adapter<PantryRecycl
     @Override
     public void onBindViewHolder(@NonNull PantryRecyclerViewAdapter.MyViewHolder holder, int position) {
         // assigning values to the views created in pantry_rv_row layout xml file, based on the position of the recycler view
-        holder.name.setText(pantryItemModels.get(position).getName());
-        holder.quantity.setText(pantryItemModels.get(position).getQuantity());
-        holder.weight.setText(pantryItemModels.get(position).getWeight());
+        holder.name.setText(pantryItems.get(position).getName());
+        holder.quantity.setText(String.valueOf(pantryItems.get(position).getQuantity()));
+        holder.weight.setText(String.valueOf(pantryItems.get(position).getWeight()));
     }
 
     @Override
     public int getItemCount() {
-        return pantryItemModels.size();
+        return pantryItems.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
