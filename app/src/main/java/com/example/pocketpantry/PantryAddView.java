@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class PantryAddView extends AppCompatActivity{
-
     private Button addButton;
     private ImageButton backButton;
     private EditText quantityValue, weightValue;
