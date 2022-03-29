@@ -16,13 +16,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class PantryAddView extends AppCompatActivity{
+    private static final String TAG = "PantryAddView";
+
     private Button addButton;
     private ImageButton backButton;
     private EditText quantityValue, weightValue;
     private Presenter presenter;
     private Spinner itemSpinner;
     String[] items;
-    private static final String TAG = "PantryAddViewActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,30 +50,44 @@ public class PantryAddView extends AppCompatActivity{
             }
         });
 
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    }
 
-                String quantityString = quantityValue.getText().toString();
-                int quantity = Integer.parseInt(String.valueOf(quantityString));
-                //Log.d(TAG, "quantity: " + quantity);
+    public void startThread(View view) {
+        PantryRunnable runnable = new PantryRunnable();
+        new Thread(runnable).start();
+    }
+    public void stopThread(View view) {
 
-                String weightString = weightValue.getText().toString();
-                float weight = Float.parseFloat(String.valueOf(weightString));
-                //Log.d(TAG, "weight: " + weight);
+    }
 
-                itemSpinner = findViewById(R.id.pantryItems);
-                String pantryItem = itemSpinner.getSelectedItem().toString();
-                System.out.println(pantryItem);
+    class PantryRunnable implements Runnable {
+        @Override
+        public void run() {
+            addButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                Log.d(TAG, "PantryAddView.this: " + PantryAddView.this + ", pantryItem: " + pantryItem + ", quantity: " + quantity + ", weight: " + weight);
+                    String quantityString = quantityValue.getText().toString();
+                    int quantity = Integer.parseInt(String.valueOf(quantityString));
+                    //Log.d(TAG, "quantity: " + quantity);
 
-                presenter = new Presenter();
+                    String weightString = weightValue.getText().toString();
+                    float weight = Float.parseFloat(String.valueOf(weightString));
+                    //Log.d(TAG, "weight: " + weight);
 
-                boolean success = presenter.onClickCreatePantryItem(PantryAddView.this, pantryItem, quantity, weight);
+                    itemSpinner = findViewById(R.id.pantryItems);
+                    String pantryItem = itemSpinner.getSelectedItem().toString();
+                    System.out.println(pantryItem);
 
-                Toast.makeText(PantryAddView.this, "Success = "+success, Toast.LENGTH_SHORT).show();
-            }
-        });
+                    Log.d(TAG, "PantryAddView.this: " + PantryAddView.this + ", pantryItem: " + pantryItem + ", quantity: " + quantity + ", weight: " + weight);
+
+                    presenter = new Presenter();
+
+                    boolean success = presenter.onClickCreatePantryItem(PantryAddView.this, pantryItem, quantity, weight);
+
+                    Toast.makeText(PantryAddView.this, "Success = "+success, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 }
