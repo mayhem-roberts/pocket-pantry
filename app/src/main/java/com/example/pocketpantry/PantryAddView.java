@@ -15,7 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class PantryAddView extends AppCompatActivity{
+public class PantryAddView extends AppCompatActivity implements Runnable{
     private Button addButton;
     private ImageButton backButton;
     private EditText quantityValue, weightValue;
@@ -53,28 +53,31 @@ public class PantryAddView extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-                String quantityString = quantityValue.getText().toString();
-                int quantity = Integer.parseInt(String.valueOf(quantityString));
-                //Log.d(TAG, "quantity: " + quantity);
-
-                String weightString = weightValue.getText().toString();
-                float weight = Float.parseFloat(String.valueOf(weightString));
-                //Log.d(TAG, "weight: " + weight);
-
-                itemSpinner = findViewById(R.id.pantryItems);
-                String pantryItem = itemSpinner.getSelectedItem().toString();
-                System.out.println(pantryItem);
-
-                Log.d(TAG, "PantryAddView.this: " + PantryAddView.this + ", pantryItem: " + pantryItem + ", quantity: " + quantity + ", weight: " + weight);
-
-                presenter = new Presenter();
-
-                boolean success = presenter.onClickCreatePantryItem(PantryAddView.this, pantryItem, quantity, weight);
-
-                Toast.makeText(PantryAddView.this, "Success = "+success, Toast.LENGTH_SHORT).show();
             }
         });
     }
 
 
+    @Override
+    public void run() {
+        String quantityString = quantityValue.getText().toString();
+        int quantity = Integer.parseInt(String.valueOf(quantityString));
+        //Log.d(TAG, "quantity: " + quantity);
+
+        String weightString = weightValue.getText().toString();
+        float weight = Float.parseFloat(String.valueOf(weightString));
+        //Log.d(TAG, "weight: " + weight);
+
+        itemSpinner = findViewById(R.id.pantryItems);
+        String pantryItem = itemSpinner.getSelectedItem().toString();
+        System.out.println(pantryItem);
+
+        Log.d(TAG, "PantryAddView.this: " + PantryAddView.this + ", pantryItem: " + pantryItem + ", quantity: " + quantity + ", weight: " + weight);
+
+        presenter = new Presenter();
+
+        boolean success = presenter.onClickCreatePantryItem(PantryAddView.this, pantryItem, quantity, weight);
+
+        Toast.makeText(PantryAddView.this, "Success = "+success, Toast.LENGTH_SHORT).show();
+    }
 }
