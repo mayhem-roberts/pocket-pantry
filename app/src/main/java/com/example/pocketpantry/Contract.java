@@ -21,6 +21,7 @@ package com.example.pocketpantry;
 
 import android.content.Context;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface Contract {
@@ -70,6 +71,6 @@ public interface Contract {
         void onClickReadPantryItem();
         void onClickUpdatePantryItem(Context context, PantryItem pantryItem);
         void onClickDeletePantryItem(Context context, int _id);
-        List<PantryItem> showAllPantryItems(Context context);
+        ArrayList<PantryItem> showAllPantryItems(Context context);
     }
 }

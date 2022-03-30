@@ -3,6 +3,7 @@ package com.example.pocketpantry;
 import android.content.Context;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Presenter implements Contract.Presenter{
@@ -58,7 +59,7 @@ public class Presenter implements Contract.Presenter{
         databaseHelper.deleteItem(_id);
     }
     @Override
-    public List<PantryItem> showAllPantryItems(Context context) {
+    public ArrayList<PantryItem> showAllPantryItems(Context context) {
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
         return databaseHelper.getAll();
     }

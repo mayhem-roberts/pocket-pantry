@@ -9,6 +9,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,8 +54,8 @@ public class DatabaseHelper extends SQLiteOpenHelper implements Contract.Databas
         }
     }
 
-    public List<PantryItem> getAll() {
-        List<PantryItem> returnList = new ArrayList<>();
+    public ArrayList<PantryItem> getAll() {
+        ArrayList<PantryItem> returnList = new ArrayList<>();
 
         String queryString = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
