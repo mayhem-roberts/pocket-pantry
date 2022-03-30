@@ -1,21 +1,4 @@
-/**********************************************************************
-CONTRACT Interface
-This interface contains all the methods to be implemented by the
- Model, View, and Presenter classes.
 
- TO DO:
- 1. These functions all still need their return types and parameters
- finalized. What will each function return and what data will they be
- receiving?
-
- This information will come from four sources:
-    -the text API that will give the user a drop down list of items
-     for selecting pantry items
-    -the Shared Preferences contract
-    -the front-end contract
-
- 2. Will we need any other methods?
-**********************************************************************/
 
 package com.example.pocketpantry;
 
