@@ -28,9 +28,9 @@ public class PantryView extends AppCompatActivity {
 
         // pantry recyclerview
         RecyclerView recyclerView = findViewById(R.id.pantryRecyclerView);
-        Presenter presenter = new Presenter();
+        Presenter presenter = new Presenter(PantryView.this);
         // set up adapter AFTER setUpPantryItemModels
-        PantryRecyclerViewAdapter adapter = new PantryRecyclerViewAdapter(this, presenter.showAllPantryItems(PantryView.this));
+        PantryRecyclerViewAdapter adapter = new PantryRecyclerViewAdapter(this, presenter.showAllPantryItems());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

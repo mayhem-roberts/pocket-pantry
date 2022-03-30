@@ -1,20 +1,32 @@
 /**********************************************************************
 CONTRACT Interface
-This interface contains all the methods to be implemented by the
- Model, View, and Presenter classes.
+ This program uses Model View Presenter (MVP) architecture. The purpose
+ of this interface is to establish how communication will occur between
+ Views-Presenter as well as Presenter-Models.
 
- TO DO:
- 1. These functions all still need their return types and parameters
- finalized. What will each function return and what data will they be
- receiving?
+ This interface contains all the abstract methods of the program. These
+ methods will be implemented by the Models, Views, and Presenter
+ classes.
 
- This information will come from four sources:
-    -the text API that will give the user a drop down list of items
-     for selecting pantry items
-    -the Shared Preferences contract
-    -the front-end contract
+ Models:
+ DatabaseHelper, PantryItem
 
- 2. Will we need any other methods?
+ Views:
+ MainActivity, PantryView, PantryAddView, and PantryRecyclerView
+
+ Presenter:
+ Presenter
+
+ To Do:
+ 1. The Views need to be refactored and the View interface needs to be
+ built out with abstract functions.
+ 2. Currently, PantryRecyclerView receives an array of PantryItems
+ from showAllPantryItems which is technically a breach of MVP.
+ 3. Functions in the Presenter interface pertaining to recipes are
+ stubs.
+ 4. Views for Recipes need to be created
+ 5. DatabaseHelper's functions need to be refactored to perform
+ database operations for pantry items or recipe items
 **********************************************************************/
 
 package com.example.pocketpantry;
@@ -25,38 +37,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface Contract {
-    interface View{}
-
     interface Model{
-        //CRUD for recipes
-        void createRecipe();
-        void readRecipe();
-        void updateRecipe();
-        void deleteRecipe();
-
-        //get all recipes
-        void getAllRecipes();
-
-        //CRUD for pantry items
-        void createPantryItem();
-        void readPantryItem();
-        void updatePantryItem();
-        void deletePantryItem();
-
-        //get all pantry items
-        void getAllPantryItems();
-    }
-
-    interface DatabaseModel{
-        //create
+        //create new pantry items in the database
         boolean addOne(String name, int quantity, float weight);
-        //read
+        //get all pantry items from the database
         List<PantryItem> getAll();
-        //update
+        //update an item in the database
         void updateItem(PantryItem pantryItem);
-        //delete
+        //delete a pantry item in the database
         void deleteItem(int _id);
     }
+
+    interface View{}
 
     interface Presenter{
         //Event handlers for recipes view
@@ -67,10 +59,9 @@ public interface Contract {
         void showAllRecipes();
 
         //Event handlers for pantry view
-        boolean onClickCreatePantryItem(Context context, String name, int quantity, float weight);
-        void onClickReadPantryItem();
-        void onClickUpdatePantryItem(Context context, PantryItem pantryItem);
-        void onClickDeletePantryItem(Context context, int _id);
-        ArrayList<PantryItem> showAllPantryItems(Context context);
+        boolean onClickCreatePantryItem(String name, int quantity, float weight);
+        void onClickUpdatePantryItem(PantryItem pantryItem);
+        void onClickDeletePantryItem(int _id);
+        ArrayList<PantryItem> showAllPantryItems();
     }
 }

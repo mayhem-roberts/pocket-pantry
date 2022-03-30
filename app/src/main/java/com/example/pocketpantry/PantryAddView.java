@@ -67,9 +67,9 @@ public class PantryAddView extends AppCompatActivity{
 
                 Log.d(TAG, "PantryAddView.this: " + PantryAddView.this + ", pantryItem: " + pantryItem + ", quantity: " + quantity + ", weight: " + weight);
 
-                Presenter presenter = new Presenter();
+                Presenter presenter = new Presenter(PantryAddView.this);
 
-                boolean success = presenter.onClickCreatePantryItem(PantryAddView.this, pantryItem, quantity, weight);
+                boolean success = presenter.onClickCreatePantryItem(pantryItem, quantity, weight);
 
                 Toast.makeText(PantryAddView.this, "Success = "+success, Toast.LENGTH_SHORT).show();
             }
