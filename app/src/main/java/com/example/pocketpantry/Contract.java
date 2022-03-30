@@ -38,28 +38,28 @@ import java.util.List;
 
 public interface Contract {
     interface Model{
-        //create new pantry items in the database
+        //Function headers for database operations, see DatabaseHelper class
+        // for definitions
         boolean addOne(String name, int quantity, float weight);
-        //get all pantry items from the database
         List<PantryItem> getAll();
-        //update an item in the database
         void updateItem(PantryItem pantryItem);
-        //delete a pantry item in the database
         void deleteItem(int _id);
     }
 
     interface View{}
 
     interface Presenter{
-        //Event handlers for recipes view
+        //Event handlers for recipes view.
+        //These are all stub functions, they do not yet have definitions
         void onClickCreateRecipe();
         void onClickReadRecipe();
         void onClickUpdateRecipe();
         void onClickDeleteRecipe();
         void showAllRecipes();
 
-        //Event handlers for pantry view
-        boolean onClickCreatePantryItem(String name, int quantity, float weight);
+        //Event handlers for pantry view, see Presenter class for definitions
+        boolean onClickCreatePantryItem(String name, int quantity,
+                                        float weight);
         void onClickUpdatePantryItem(PantryItem pantryItem);
         void onClickDeletePantryItem(int _id);
         ArrayList<PantryItem> showAllPantryItems();
