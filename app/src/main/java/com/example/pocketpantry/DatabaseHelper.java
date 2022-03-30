@@ -30,7 +30,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseHelper extends SQLiteOpenHelper implements Contract.DatabaseModel {
+public class DatabaseHelper extends SQLiteOpenHelper implements Contract.Model {
     public static final String TABLE_NAME = "PANTRY_TABLE";
     public static final String COLUMN_PANTRY_ITEM_NAME = "PANTRY_ITEM_NAME";
     public static final String COLUMN_PANTRY_ITEM_QUANTITY = "PANTRY_ITEM_QUANTITY";

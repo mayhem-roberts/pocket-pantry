@@ -1,66 +1,70 @@
+/**********************************************************************
+ PRESENTER Class
+ This class handles interactions between Models and Views.
+
+ To Do:
+ 1. Currently, PantryRecyclerView receives an array of PantryItems
+ from showAllPantryItems which is technically a breach of MVP.
+ 2. Functions in the Presenter interface pertaining to recipes are
+ stubs.
+ **********************************************************************/
 package com.example.pocketpantry;
 
 import android.content.Context;
-import android.util.Log;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class Presenter implements Contract.Presenter{
+    //This object gives us access to the model
+    private DatabaseHelper databaseHelper;
 
-    private static final String TAG = "Presenter Class";
-    //the 'model' object will be used to call all
-    // methods from the 'Model' contract
-    private Contract.Model model;
-
+    //Non-default constructor initializes databaseHelper object with context.
+    //'context' is the Activity where 'this' was created
+    public Presenter(Context context) {
+        this.databaseHelper = new DatabaseHelper(context);
+    }
+    //stub function
     @Override
     public void onClickCreateRecipe() {
 
     }
-
+    //stub function
     @Override
     public void onClickReadRecipe() {
 
     }
-
+    //stub function
     @Override
     public void onClickUpdateRecipe() {
 
     }
-
+    //stub function
     @Override
     public void onClickDeleteRecipe() {
 
     }
-
+    //stub function
     @Override
     public void showAllRecipes() {
 
     }
+    //calls databaseHelper.addOne, return true if successful
     @Override
-    public boolean onClickCreatePantryItem(Context context, String name, int quantity, float weight) {
-        DatabaseHelper databaseHelper = new DatabaseHelper(context);
-        boolean success = databaseHelper.addOne(name, quantity, weight);
-        return success;
+    public boolean onClickCreatePantryItem(String name, int quantity, float weight) {
+        return databaseHelper.addOne(name, quantity, weight);
     }
-
+    //calls databaseHelper.updateItem
     @Override
-    public void onClickReadPantryItem() {
-
-    }
-    @Override
-    public void onClickUpdatePantryItem(Context context, PantryItem pantryItem) {
-        DatabaseHelper databaseHelper = new DatabaseHelper(context);
+    public void onClickUpdatePantryItem(PantryItem pantryItem) {
         databaseHelper.updateItem(pantryItem);
     }
+    //calls databaseHelper.deleteItem
     @Override
-    public void onClickDeletePantryItem(Context context, int _id) {
-        DatabaseHelper databaseHelper = new DatabaseHelper(context);
+    public void onClickDeletePantryItem(int _id) {
         databaseHelper.deleteItem(_id);
     }
+    //calls databaseHelper.getAll, returns ArrayList of PantryItems
     @Override
-    public ArrayList<PantryItem> showAllPantryItems(Context context) {
-        DatabaseHelper databaseHelper = new DatabaseHelper(context);
+    public ArrayList<PantryItem> showAllPantryItems() {
         return databaseHelper.getAll();
     }
 }
