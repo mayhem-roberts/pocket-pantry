@@ -9,7 +9,7 @@ CONTRACT Interface
  classes.
 
  Models:
- DatabaseHelper, PantryItem
+ DatabaseHelper
 
  Views:
  MainActivity, PantryView, PantryAddView, and PantryRecyclerView
@@ -20,13 +20,11 @@ CONTRACT Interface
  To Do:
  1. The Views need to be refactored and the View interface needs to be
  built out with abstract functions.
- 2. Currently, PantryRecyclerView receives an array of PantryItems
- from showAllPantryItems which is technically a breach of MVP.
- 3. Functions in the Presenter interface pertaining to recipes are
+ 2. Functions in the Presenter interface pertaining to recipes are
  stubs.
  4. Views for Recipes need to be created
  5. DatabaseHelper's functions need to be refactored to perform
- database operations for pantry items or recipe items
+ database operations for pantry items as well as recipe items
 **********************************************************************/
 
 package com.example.pocketpantry;

@@ -3,9 +3,7 @@
  This class handles interactions between Models and Views.
 
  To Do:
- 1. Currently, PantryRecyclerView receives an array of PantryItems
- from showAllPantryItems which is technically a breach of MVP.
- 2. Functions in the Presenter interface pertaining to recipes are
+ 1. Functions in the Presenter interface pertaining to recipes are
  stubs.
  **********************************************************************/
 package com.example.pocketpantry;
