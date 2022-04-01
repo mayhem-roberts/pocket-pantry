@@ -1,3 +1,9 @@
+/**********************************************
+ *
+ * Pantry view shows the list of items you have added to your pantry.
+ * It uses a recycler view to display all items
+ *
+ **********************************************/
 package com.example.pocketpantry;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,20 +28,18 @@ public class PantryView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry_view);
 
+        // pantry recyclerview, add and back button variables found by id
         addButton = findViewById(R.id.pantryAddButtton);
         backButton = findViewById(R.id.backButton);
-
-        // pantry recyclerview
         RecyclerView recyclerView = findViewById(R.id.pantryRecyclerView);
+
+        // set up adapter for pantry recycler view
         Presenter presenter = new Presenter(PantryView.this);
-        // set up adapter AFTER setUpPantryItemModels
         PantryRecyclerViewAdapter adapter = new PantryRecyclerViewAdapter(this, presenter.showAllPantryItems());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
-
-
+        // onClick listener for add button, change activity to pantry add view
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,6 +48,7 @@ public class PantryView extends AppCompatActivity {
             }
         });
 
+        // onClick listener for back button, change activity to home view
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
