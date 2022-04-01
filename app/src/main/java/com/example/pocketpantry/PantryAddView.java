@@ -1,3 +1,13 @@
+/**********************************************
+ *
+ * Pantry Add view allows you to choose from a drop down list of baking items,
+ * using a spinner you can select the desired item.
+ *
+ * Also prompts you for the quantity and weight, when the add item button is pressed
+ * the item, quantity, and weight is added to the pantry database and is displayed on
+ * the pantry view.
+ *
+ **********************************************/
 package com.example.pocketpantry;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,20 +25,21 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class PantryAddView extends AppCompatActivity implements Runnable{
-    private Button addButton;
-    private ImageButton backButton;
+
+public class PantryAddView extends AppCompatActivity{
+    private Button addButton, backButton;
+
     private EditText quantityValue, weightValue;
     private Presenter presenter;
     private Spinner itemSpinner;
     String[] items;
-    private static final String TAG = "PantryAddViewActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry_add_view);
 
+        // add item, back button, quantity and weight variables found by id
         addButton = findViewById(R.id.addItemButton);
         backButton = findViewById(R.id.backButton2);
         quantityValue = findViewById(R.id.quantity);
@@ -41,6 +52,7 @@ public class PantryAddView extends AppCompatActivity implements Runnable{
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         itemSpinner.setAdapter(adapter);
 
+        // onClick listener for back button, change activity to home view
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,14 +61,23 @@ public class PantryAddView extends AppCompatActivity implements Runnable{
             }
         });
 
+        // onClick listener for add item button, add item selected from spinner, quantity and weight to database
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+<<<<<<< HEAD
             }
         });
     }
 
+=======
+                String quantityString = quantityValue.getText().toString();
+                int quantity = Integer.parseInt(String.valueOf(quantityString));
+
+                String weightString = weightValue.getText().toString();
+                float weight = Float.parseFloat(String.valueOf(weightString));
+>>>>>>> develop
 
     @Override
     public void run() {
@@ -64,6 +85,7 @@ public class PantryAddView extends AppCompatActivity implements Runnable{
         int quantity = Integer.parseInt(String.valueOf(quantityString));
         //Log.d(TAG, "quantity: " + quantity);
 
+<<<<<<< HEAD
         String weightString = weightValue.getText().toString();
         float weight = Float.parseFloat(String.valueOf(weightString));
         //Log.d(TAG, "weight: " + weight);
@@ -75,6 +97,16 @@ public class PantryAddView extends AppCompatActivity implements Runnable{
         Log.d(TAG, "PantryAddView.this: " + PantryAddView.this + ", pantryItem: " + pantryItem + ", quantity: " + quantity + ", weight: " + weight);
 
         presenter = new Presenter();
+=======
+                Presenter presenter = new Presenter(PantryAddView.this);
+
+                boolean success = presenter.onClickCreatePantryItem(pantryItem, quantity, weight);
+
+                Toast.makeText(PantryAddView.this, success ? "Item added to Pantry" : "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+>>>>>>> develop
 
         boolean success = presenter.onClickCreatePantryItem(PantryAddView.this, pantryItem, quantity, weight);
 
