@@ -2,13 +2,18 @@
     <string name="app_name"></string>
 
     <string-array name="foodItems">
-        <item>Milk</item>
-        <item>Eggs</item>
         <item>Sugar</item>
         <item>Flour</item>
         <item>Cocoa Powder</item>
+        <item>Eggs</item>
         <item>Baking Soda</item>
+        <item>Milk</item>
+        <item>Honey</item>
         <item>Vanilla Extract</item>
         <item>Salt</item>
+        <item>Yeast</item>
+        <item>Baking Powder</item>
+        <item>Butter</item>
+        <item>Cream</item>
     </string-array>
 </resources>

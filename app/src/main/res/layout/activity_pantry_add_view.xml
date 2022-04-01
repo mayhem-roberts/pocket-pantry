@@ -67,14 +67,13 @@
             android:layout_marginTop="10dp">
 
             <EditText
-                android:id="@+id/weight"
+                android:id="@+id/quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:layout_weight="1"/>
-
             <EditText
-                android:id="@+id/quantity"
+                android:id="@+id/weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
