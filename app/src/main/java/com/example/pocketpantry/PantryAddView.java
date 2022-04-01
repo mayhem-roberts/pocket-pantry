@@ -16,8 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class PantryAddView extends AppCompatActivity{
-    private Button addButton;
-    private ImageButton backButton;
+    private Button addButton, backButton;
     private EditText quantityValue, weightValue;
     private Presenter presenter;
     private Spinner itemSpinner;

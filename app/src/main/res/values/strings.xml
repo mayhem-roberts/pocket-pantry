@@ -6,5 +6,9 @@
         <item>Eggs</item>
         <item>Sugar</item>
         <item>Flour</item>
+        <item>Cocoa Powder</item>
+        <item>Baking Soda</item>
+        <item>Vanilla Extract</item>
+        <item>Salt</item>
     </string-array>
 </resources>
