@@ -15,8 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PantryView extends AppCompatActivity {
-    private Button addButton;
-    private ImageButton backButton;
+    private Button addButton, backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

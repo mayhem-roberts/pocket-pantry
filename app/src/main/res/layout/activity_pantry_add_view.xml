@@ -7,37 +7,47 @@
     android:layout_margin="25dp"
     tools:context=".PantryAddView">
 
+    <Button
+        android:id="@+id/backButton2"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:backgroundTint="#FF9800"
+        android:text="Back"
+        android:textAlignment="textStart"
+        android:textSize="20sp"
+        app:tint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/addItemButton"
+        app:layout_constraintTop_toBottomOf="@id/backButton2" >
 
-        <ImageButton
-            android:id="@+id/backButton2"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:backgroundTint="#4CAF50"
-            app:srcCompat="?attr/homeAsUpIndicator"
-            app:tint="#FFFFFF" />
 
         <Spinner
             android:id="@+id/pantryItems"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:textSize="35sp"/>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:layout_marginTop="40dp">
 
             <TextView
                 android:id="@+id/quantityText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Quantity"
+                android:text="Quantity:"
+                android:textSize="17dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -45,37 +55,42 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Weight"
+                android:text="Weight:"
+                android:textSize="17dp"
                 android:layout_weight="1"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:layout_marginTop="10dp">
 
             <EditText
                 android:id="@+id/weight"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
                 android:layout_weight="1"/>
 
             <EditText
                 android:id="@+id/quantity"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
                 android:layout_weight="1"/>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/addItemButton"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:backgroundTint="#4CAF50"
-            android:text="+"
-            android:textSize="34sp" />
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/addItemButton"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:backgroundTint="#FF9800"
+        android:text="Add Pantry Item"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
