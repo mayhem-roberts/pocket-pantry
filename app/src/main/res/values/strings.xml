@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name"></string>
-
     <string-array name="foodItems">
         <item>Sugar</item>
         <item>Flour</item>
